@@ -1,0 +1,12 @@
+# app/views/movies/index.html.erb
+
+<h1>Mes Films</h1>
+<% @movies.each do |movie| %>
+  <p><a href="/movies/<%= movie.id %>"><%= movie.title %></a></p>
+<% end %>
+
+
+<%= form_tag "/movies", method: "post" do %>
+  <input type="text" name="title" />
+  <input type="submit" value="Ajouter le film" />
+<% end %>

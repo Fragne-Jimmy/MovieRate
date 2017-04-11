@@ -1,0 +1,17 @@
+# app/views/books/show.html.erb
+
+<h1><%= @movie.title %></h1>
+
+<%= form_tag "/movies/#{@movie.id}", method: "patch" do %>
+  <input type="text" name="title" value="<%= @movie.title %>" />
+  <input type="submit" value="Modifier le film" />
+<% end %>
+
+
+
+<%= form_tag "/movies/#{@movie.id}", method: "delete" do %>
+  <input type="submit" value="Supprimer le film" />
+<% end %>
+
+
+<p><a href="/movies">Retourner à l’index</a></p>
